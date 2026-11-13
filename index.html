@@ -65,9 +65,39 @@ url('assets/ch1-opening.webp') center 28%/cover no-repeat}
 .home-story:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#190d18e8)}
 .home-story b{position:absolute;z-index:1;bottom:10px;left:4px;right:4px;font-size:12px;line-height:1.12;text-shadow:0 2px 3px #000}
 @media(max-width:380px){.home-screen .home-feature{height:395px}.continue-thumb{width:85px;flex-basis:85px}.continue-copy b{font-size:12px}.home-story{min-height:112px}}
+
+/* Approved KPALAVA! home reference — close mobile composition */
+.topbar.home-topbar{height:116px;padding:10px 15px;align-items:flex-start;background:#064b3b;border-bottom:0}
+.home-topbar .icon-btn{margin-top:16px;font-size:27px}
+.home-topbar .brand-mark{margin-top:3px;transform:rotate(-3deg)}
+.home-topbar .brand-word{font:900 34px/1 Comfortaa,sans-serif;letter-spacing:-3px;color:#ffc52e;-webkit-text-stroke:1.6px #24100a;text-shadow:2px 4px #24100a,4px 6px #a52c0b}
+.home-topbar .brand-tagline{font-size:11px;padding:5px 12px;margin-top:5px}
+.top-actions{display:flex;align-items:center;gap:7px;margin-top:12px}
+.home-topbar .coin-pill{display:flex;align-items:center;gap:5px;padding:7px 9px;font-size:13px;white-space:nowrap}
+.home-topbar .coin-pill b{display:inline-grid;place-items:center;background:#19a83f;color:white;width:21px;height:21px;border-radius:50%;font-size:16px}
+.bell-btn{position:relative;border:0;background:transparent;color:#fff;font-size:25px;padding:4px}
+.bell-btn i{position:absolute;right:-1px;top:-4px;border-radius:50%;background:#e31d35;color:white;font:800 10px 'Nunito Sans';padding:3px 5px}
+.home-screen{padding-top:0;background:#fff2df}
+.home-screen .home-feature{height:485px}
+.home-feature:before{content:"THE NIGERIAN\\A INTERACTIVE\\A COMEDY GAME";white-space:pre;position:absolute;z-index:1;left:16px;top:48px;color:#fff;font:900 19px/1.08 'Nunito Sans';text-shadow:0 2px 5px #092c24;max-width:140px}
+.feature-copy{bottom:8px}
+.feature-copy h1{font-size:clamp(25px,7vw,35px)}
+.feature-play{min-width:225px;padding:12px 30px;font-size:19px}
+.home-stories{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.home-story{min-height:132px;border-radius:14px}
+.home-story b{font-size:11px}
+.art-landlord{filter:hue-rotate(22deg) saturate(1.15);background-position:55% center}
+@media(max-width:390px){
+.topbar.home-topbar{height:102px;padding:8px 10px}
+.home-topbar .brand-word{font-size:29px}
+.home-topbar .coin-pill{font-size:11px;padding:6px}
+.home-screen .home-feature{height:430px}
+.home-story{min-height:108px}
+.home-story b{font-size:10px}
+}
 </style></head>
 <body><div id="app">
-<header class="topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><div class="brand-word">KPALAVA<span>!</span></div><div class="brand-tagline">Na you choose am!</div></div><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> +</button></header>
+<header class="topbar home-topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><div class="brand-word">KPALAVA<span>!</span></div><div class="brand-tagline">Na you choose am!</div></div><div class="top-actions"><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> <b>+</b></button><button class="bell-btn" aria-label="Notifications" data-screen="episodes">♟<i>1</i></button></div></header>
 <main>
 <section class="screen active home-screen" id="home">
 <div class="home-feature">
@@ -77,9 +107,10 @@ url('assets/ch1-opening.webp') center 28%/cover no-repeat}
 <button class="continue-card" data-action="play"><span class="continue-thumb"></span><span class="continue-copy"><b>The Wedding That<br>Almost Didn't Happen</b><small>Chapter 1 of 5</small><span class="continue-progress"><i></i></span></span><strong class="continue-percent">25%</strong><span class="continue-arrow">▶</span></button>
 <div class="section-title home-section-title"><h2>More Stories</h2><button class="link" data-screen="stories">See All</button></div>
 <div class="home-stories">
-  <button class="home-story" data-screen="stories"><span class="home-story-art art-tenant"></span><b>More stories<br>coming soon</b></button>
-  <button class="home-story" data-screen="stories"><span class="home-story-art art-office"></span><b>New palava<br>loading...</b></button>
-  <button class="home-story" data-screen="stories"><span class="home-story-art art-campus"></span><b>Stay tuned<br>for more</b></button>
+  <button class="home-story" data-screen="stories"><span class="home-story-art art-tenant"></span><b>The Tenant<br>from Hell</b></button>
+  <button class="home-story" data-screen="stories"><span class="home-story-art art-landlord"></span><b>The Landlord's<br>Daughter</b></button>
+  <button class="home-story" data-screen="stories"><span class="home-story-art art-office"></span><b>Office<br>Wahala</b></button>
+  <button class="home-story" data-screen="stories"><span class="home-story-art art-campus"></span><b>Campus<br>Palava</b></button>
 </div>
 </section>
 <section class="screen" id="stories"><div class="page-head"><h1>Stories</h1></div><p class="muted">Welcome to the KPALAVA! universe. Every story has its own cast, chaos and consequences.</p><div class="story-card"><div class="story-thumb"></div><div class="story-info"><span class="pill">2 CHAPTERS FREE</span><h3>The Wedding That Almost Didn't Happen</h3><p>Family · Comedy · Wedding</p><button class="btn primary" data-screen="episodes">Explore story</button></div></div></section>
