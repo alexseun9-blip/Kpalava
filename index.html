@@ -95,9 +95,25 @@ url('assets/ch1-opening.webp') center 28%/cover no-repeat}
 .home-story{min-height:108px}
 .home-story b{font-size:10px}
 }
+
+/* Match the exact logo treatment and line-icon navigation from the approved reference */
+.home-topbar .brand-mark{margin-top:0;transform:rotate(-3deg);min-width:0}
+.logo-plaque{position:relative;padding:6px 12px 8px;background:linear-gradient(145deg,#b40c31,#6d092e 72%);border:2px solid #f7c22f;border-radius:15px 18px 13px 18px;box-shadow:0 3px 0 #28100b,0 5px 0 #e6a21c;white-space:nowrap}
+.logo-plaque:before{content:"";position:absolute;inset:3px;border:1px solid #ffd95a;border-radius:11px;pointer-events:none}
+.home-topbar .brand-word{position:relative;font:1000 31px/.98 'Nunito Sans',sans-serif;letter-spacing:-2.5px;color:#ffc52e;-webkit-text-stroke:1.4px #230b06;text-shadow:2px 3px 0 #230b06,3px 4px 0 #e94b12}
+.home-topbar .brand-word span{color:#ffb51f}
+.home-topbar .brand-tagline{position:relative;display:block;width:max-content;margin:3px auto 0;background:#fff0bf;color:#27120b;font:italic 900 10px 'Nunito Sans';padding:3px 10px;clip-path:polygon(4% 0,100% 0,95% 100%,0 100%)}
+.logo-burst{position:absolute;right:-8px;top:-10px;color:#ffd53f;font-size:18px;text-shadow:1px 2px #7b1b08}
+.reference-nav{height:82px;background:linear-gradient(105deg,#bd075a,#71043e);border-top:2px solid #ffb2d1;border-radius:25px 25px 0 0;padding:4px 7px max(6px,env(safe-area-inset-bottom));}
+.reference-nav button{flex:1;min-width:0;color:white;font-size:10px;gap:1px}
+.reference-nav button .nav-icon{height:36px;display:grid;place-items:center}
+.reference-nav button svg{width:31px;height:31px;display:block}
+.reference-nav button.active{background:linear-gradient(#ffe94a,#ffb900);color:#4a1230;border-radius:999px;max-width:116px;box-shadow:0 2px 0 #7a3a0a}
+.reference-nav button.active svg{color:#a60050}
+@media(max-width:390px){.home-topbar .brand-word{font-size:26px}.logo-plaque{padding:5px 8px}.reference-nav button{font-size:9px}.reference-nav button svg{width:28px;height:28px}}
 </style></head>
 <body><div id="app">
-<header class="topbar home-topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><div class="brand-word">KPALAVA<span>!</span></div><div class="brand-tagline">Na you choose am!</div></div><div class="top-actions"><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> <b>+</b></button><button class="bell-btn" aria-label="Notifications" data-screen="episodes">♟<i>1</i></button></div></header>
+<header class="topbar home-topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><div class="logo-plaque"><span class="logo-burst">✦</span><div class="brand-word">KPALAVA<span>!</span></div><div class="brand-tagline">Na you choose am!</div></div></div><div class="top-actions"><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> <b>+</b></button><button class="bell-btn" aria-label="Notifications" data-screen="episodes">♟<i>1</i></button></div></header>
 <main>
 <section class="screen active home-screen" id="home">
 <div class="home-feature">
@@ -119,7 +135,13 @@ url('assets/ch1-opening.webp') center 28%/cover no-repeat}
 <section class="screen" id="wallet"><div class="page-head"><h1>My Coins</h1></div><div class="panel" style="text-align:center"><div style="font-size:40px">🪙</div><div id="walletBalance" style="font:700 34px Comfortaa">30</div><b>One shared KPALAVA! wallet</b><p class="muted">Use coins for eligible premium choices across stories.</p><p class="notice">This is a prototype wallet. Real-money purchases are not enabled.</p></div></section>
 <section class="screen" id="profile"><div class="page-head"><h1>Player profile</h1></div><div class="panel"><label class="field" for="playerName">What should we call you?</label><input class="input" id="playerName" maxlength="18" placeholder="Your player name"><label class="field" for="playerGender">Gender identity</label><select class="input" id="playerGender"><option value="not-specified">Prefer not to say</option><option value="woman">Woman</option><option value="man">Man</option><option value="non-binary">Non-binary</option><option value="self-describe">Self-describe</option></select><label class="field">Choose your look</label><div class="look-grid" id="lookGrid"><button class="look selected" data-look="classic">The Classic</button><button class="look" data-look="observer">The Quiet Observer</button><button class="look" data-look="free-spirit">The Free Spirit</button><button class="look" data-look="bold">The Bold One</button></div><button class="btn green-btn" id="saveProfile" style="width:100%;margin-top:15px">Save profile</button><p class="muted" id="profileNotice">Your look changes how your player avatar is presented, not the story outcomes.</p></div></section>
 </main>
-<nav class="nav"><button class="active" data-screen="home"><span>⌂</span>Home</button><button data-screen="stories"><span>▤</span>Stories</button><button data-screen="episodes"><span>▣</span>Episodes</button><button data-screen="wallet"><span>🪙</span>Wallet</button><button data-screen="profile"><span>♙</span>Profile</button></nav>
+<nav class="nav reference-nav">
+<button class="active" data-screen="home"><span class="nav-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 14.5 16 4l12 10.5v13H19v-8h-6v8H4z" fill="currentColor" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/></svg></span>Home</button>
+<button data-screen="stories"><span class="nav-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6.5c5-1.8 9-.8 12 2.2v18c-3-3-7-4-12-2.2zM28 6.5c-5-1.8-9-.8-12 2.2v18c3-3 7-4 12-2.2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8 12h4m-4 4h4m8-4h4m-4 4h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Stories</button>
+<button data-screen="episodes"><span class="nav-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 9h22v19H5zM5 9l6-5 5 5 5-5 6 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="m13 14 8 4-8 4z" fill="currentColor"/></svg></span>My Episodes</button>
+<button data-screen="wallet"><span class="nav-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 6h4l3 17h16l3-12H8" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="27" r="1.8" fill="currentColor"/><circle cx="24" cy="27" r="1.8" fill="currentColor"/></svg></span>Shop</button>
+<button data-screen="profile"><span class="nav-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M4 28c.8-6.5 5-10 12-10s11.2 3.5 12 10z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></span>Profile</button>
+</nav>
 <div class="modal-wrap" id="premiumModal" role="dialog" aria-modal="true" aria-labelledby="premiumTitle"><div class="modal"><div style="font-size:36px">✨</div><h2 id="premiumTitle">A premium choice!</h2><p>This choice costs coins. Your wallet is shared across the KPALAVA! universe.</p><div class="price">🪙 50 coins</div><button class="btn green-btn" id="useCoins">Unlock with coins</button><button class="btn light-btn" id="freeChoice">Keep playing free</button><button class="link" id="closeModal">Maybe later</button></div></div>
 </div>
 <script>
