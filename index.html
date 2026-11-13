@@ -133,13 +133,24 @@ url('assets/ch1-opening.webp') center 28%/cover no-repeat}
 body.home-active #app{padding-bottom:0}
 body.home-active .topbar,body.home-active .nav{display:none}
 @media(min-width:700px){body.home-active{padding:20px 0}body.home-active #app{min-height:0}}
+
+/* Mobile viewport and live wallet refinement for the exact illustrated home screen */
+body.home-active{min-height:0;background:#fff2df}
+body.home-active #app{min-height:0;height:auto;width:min(100%,480px);padding-bottom:0;overflow:visible}
+body.home-active main{padding:0;margin:0}
+body.home-active .exact-home{display:block}
+.reference-stage{width:100%;height:auto;overflow:hidden}
+.reference-art{width:100%;height:auto;max-width:100%;object-fit:contain}
+.home-live-coins{position:absolute;z-index:3;left:73.5%;top:5.45%;width:6.4%;height:2.25%;display:flex;align-items:center;justify-content:center;background:#073d30;color:#fff;font:900 clamp(9px,2.5vw,14px)/1 system-ui,sans-serif;letter-spacing:-.3px;text-shadow:0 1px 1px #0008;pointer-events:none}
+.reference-hotspot{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@media(min-width:700px){body.home-active{padding:0}body.home-active #app{min-height:0;margin:0 auto}}
 </style></head>
 <body class="home-active"><div id="app">
 <header class="topbar home-topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><img class="real-logo" src="assets/kpalava-logo-original.png" alt="KPALAVA! — Na you choose am!"></div><div class="top-actions"><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> <b>+</b></button><button class="bell-btn" aria-label="Notifications" data-screen="episodes">♟<i>1</i></button></div></header>
 <main>
 <section class="screen active home-screen exact-home" id="home" aria-label="KPALAVA illustrated home screen">
 <div class="reference-stage">
-<img class="reference-art" src="assets/kpalava-home-reference.webp" alt="KPALAVA home screen: featured wedding story, Play Now, Continue Playing, More Stories and the original navigation icons">
+<img class="reference-art" src="assets/kpalava-home-reference.webp" alt="KPALAVA home screen: featured wedding story, Play Now, Continue Playing, More Stories and the original navigation icons">\n<span class="home-live-coins" id="homeCoinBalance" aria-label="Current coin balance">30</span>
 <button class="reference-hotspot hs-menu" aria-label="Menu" data-screen="stories"></button>
 <button class="reference-hotspot hs-wallet" aria-label="Coin wallet" data-screen="wallet"></button>
 <button class="reference-hotspot hs-bell" aria-label="Notifications" data-screen="episodes"></button>
@@ -181,7 +192,7 @@ groom:{speaker:'You',text:'You call the groom. He picks up after the first ring,
 aunty:{speaker:'You',text:'You open Aunty Ngozi’s chat. Three voice notes are already waiting. The first begins with a deep sigh. The second begins with a prayer. The third begins with your full government name.',thought:'Should I listen to all three? I still have time to relocate.',feedback:'You alerted Aunty Ngozi. May your phone battery rest in peace.'},
 search:{speaker:'You',text:'You search for emergency cake vendors. One number looks promising. Another has a profile picture of a very suspicious-looking sponge cake.',thought:'At this point, even bread with icing is a serious option.',feedback:'You chose action. Whether it is the correct action remains to be seen.'}
 };
-function updateCoins(){['coinCount','walletBalance'].forEach(id=>{if($(id))$(id).textContent=coins});localStorage.setItem('kp_coins_v1',String(coins))}
+function updateCoins(){['coinCount','walletBalance','homeCoinBalance'].forEach(id=>{if($(id))$(id).textContent=coins});localStorage.setItem('kp_coins_v1',String(coins))}
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));document.body.classList.toggle('home-active',id==='home');window.scrollTo({top:0,behavior:'smooth'})}
 function startGame(){selected='';$('continueGame').disabled=true;$('continueGame').textContent='Continue →';$('chapterLabel').textContent='CHAPTER 1: THE CAKE HAS DISAPPEARED';$('speakerName').textContent='You';$('storyBeat').textContent='You wake up at 7:12 AM to the sound of your phone vibrating nonstop. Seventeen missed calls. Forty-three WhatsApp messages. The wedding is in six hours, and the cake has mysteriously disappeared!';$('innerThought').textContent='I haven\'t even brushed my teeth, and my family is already declaring a state of emergency. What exactly did I do to deserve this?';$('choicePrompt').textContent='What do you do?';$('choiceFeedback').textContent='Choose carefully. Or don\'t. We enjoy drama here.';document.querySelectorAll('.choice').forEach(b=>b.classList.remove('selected'));show('game')}
 function openPremium(){ $('premiumModal').classList.add('show') }function closePremium(){ $('premiumModal').classList.remove('show') }
