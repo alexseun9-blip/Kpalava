@@ -19,7 +19,67 @@
 #game{padding:14px 16px 24px}.game-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 16px}.game-label{color:#8b7965;font-size:9px;font-weight:900;letter-spacing:.12em;text-align:right}.storyhead{margin:16px 0;padding:21px;border:1px solid #b78b35;border-radius:20px;background:linear-gradient(125deg,#06483d,#0b6755);color:var(--cream)}.storyhead h2{margin:8px 0;font-size:25px;line-height:1.15}.bar{height:7px;margin:15px 0 0;border-radius:10px;background:#ffffff30;overflow:hidden}.bar span{display:block;width:10%;height:100%;border-radius:10px;background:var(--gold)}
 .stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px;margin:14px 0;overflow:hidden;border:2px solid #eadcc4;border-radius:22px;background:linear-gradient(145deg,#f4c987,#f8e7bd 58%,#8fb5a0);transition:background .35s}.stage:before,.stage:after{position:absolute;bottom:-28px;width:65%;height:95px;border-radius:50%;background:#21443a;opacity:.16;content:""}.stage:after{right:-18%;height:130px;background:#fff1d8}.stage[data-scene="opening"]{background:linear-gradient(150deg,#f4c987,#f8e7bd 58%,#8fb5a0)}.stage[data-scene="vendor"]{background:linear-gradient(150deg,#f4b77e,#fff0cf 58%,#e9a17b)}.stage[data-scene="groom"]{background:linear-gradient(145deg,#304b43,#688277 58%,#e4c49a)}.stage[data-scene="aunty"]{background:linear-gradient(145deg,#563d66,#a77ca0 58%,#f0c6a1)}.stage[data-scene="backup"]{background:linear-gradient(145deg,#e8a16d,#f7dcae 58%,#fff0d4)}.stage[data-scene="cliff"]{background:linear-gradient(145deg,#273d38,#52675e 55%,#bd9a76)}.stage-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 35%,#fff8df99,transparent 55%)}.scene-illustration{position:relative;z-index:1;width:min(100%,360px);height:auto;filter:drop-shadow(0 9px 6px #39291e22);animation:portraitIn .4s ease-out}.scene-illustration.hero-art{display:block;width:100%;max-width:none;max-height:250px;object-fit:cover;object-position:center;border:2px solid #fff0d5;border-radius:17px;box-shadow:0 9px 24px #172c2430}.stage-caption{position:relative;z-index:2;margin-top:8px;padding:7px 12px;border-radius:20px;background:#fff1d8dd;color:#21443a;font-size:9px;font-weight:950;letter-spacing:.14em;text-align:center}
 .story-panel{margin:14px 0;padding:19px;border:1px solid var(--line);border-radius:22px;background:var(--paper);box-shadow:0 5px 18px #392e1710}.speaker-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #eee3d2}.avatar{display:grid;place-items:center;width:46px;height:46px;border-radius:15px;background:#fff1d8;font-size:26px}.speaker-name{color:#a84a2e;font-size:10px;font-weight:950;letter-spacing:.12em}.speaker-sub{margin-top:3px;color:#928779;font-size:11px}.scene{min-height:100px;font-size:16px;line-height:1.72;white-space:pre-line}.scene p{margin:0 0 15px}.scene .spoken{padding:13px 15px;border-left:4px solid #f4b94f;border-radius:0 13px 13px 0;background:#f8f1e6;font-weight:650}.choices{display:grid;gap:10px;margin-top:18px}.choice{width:100%;padding:15px;border:1.5px solid #e2d3ba;border-radius:15px;background:#fffdf8;color:#174638;text-align:left;font-size:14px;font-weight:850;box-shadow:0 2px 0 #eadcc6;transition:transform .15s,background .15s,border-color .15s}.choice small{display:block;margin-top:5px;color:#82796d;font-size:11px;font-weight:550}.choice:active{transform:scale(.99);background:#fff6e8}.continue-btn{width:100%;margin-top:18px}.foot{margin:25px 0;color:#887f72;font-size:11px;text-align:center}.hidden{display:none!important}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f6bd36;outline-offset:3px}
-@keyframes portraitIn{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}@media(min-width:600px){body{padding:20px 0}.wrap{min-height:calc(100vh - 40px);border-radius:26px}.bottom-nav{bottom:20px;border-radius:0 0 24px 24px}}@media(max-width:360px){.app-page{padding-right:13px;padding-left:13px}.welcome-banner{margin-right:-13px;margin-left:-13px;padding-right:16px;padding-left:16px}.welcome-stamp{font-size:43px}.featured-art{height:175px}}</style></head><body><main class="wrap">
+@keyframes portraitIn{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}@media(min-width:600px){body{padding:20px 0}.wrap{min-height:calc(100vh - 40px);border-radius:26px}.bottom-nav{bottom:20px;border-radius:0 0 24px 24px}}@media(max-width:360px){.app-page{padding-right:13px;padding-left:13px}.welcome-banner{margin-right:-13px;margin-left:-13px;padding-right:16px;padding-left:16px}.welcome-stamp{font-size:43px}.featured-art{height:175px}}
+/* KPALAVA! visual direction: illustrated Nigerian storybook */
+:root{--emerald:#063f35;--emerald-2:#075746;--cream:#fff1d8;--paper:#fff9ed;--orange:#f36b36;--gold:#ffc43d;--ink:#1d2e27;--muted:#766c5d;--line:#dfcfb4}
+html{background:#073d34}
+body{background:radial-gradient(ellipse at 50% 0%,#bd653d 0,#8f452e 46%,#073d34 100%);font-family:"Trebuchet MS",Nunito,system-ui,sans-serif}
+.wrap{max-width:460px;background:var(--cream);box-shadow:0 16px 60px #071e1a70}
+.top{min-height:58px;padding:10px 16px;background:#063f35;border-bottom:2px solid #c79a39}
+.brand-wordmark{font-size:25px;color:#ffca3f;text-shadow:2px 3px 0 #9b3c1f,-1px -1px 0 #fff0c9;letter-spacing:-1.7px}
+.brand-wordmark span{color:#f36b36}
+.brand-tagline{font-size:10px;font-style:italic;font-weight:950}
+.wallet{background:#0b5a49;border:1px solid #d8a83d;color:#ffdb70}
+.app-page{padding:0 13px 22px}
+.welcome-banner{min-height:330px;display:flex;align-items:flex-end;justify-content:flex-start;margin:0 -13px 18px;padding:20px 17px 22px;border:0;border-bottom:4px solid #e9b73e;border-radius:0 0 24px 24px;background:linear-gradient(180deg,#062f29 0%,#064538 32%,#063c32 100%);overflow:hidden}
+.welcome-banner:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#002c2560 0%,#00372b08 35%,#002d26d9 100%),url("assets/ch1-opening.webp") center 34%/cover no-repeat;opacity:.96}
+.welcome-banner:after{right:-90px;bottom:-145px;border-color:#ffda7330;box-shadow:0 0 0 18px #ffffff0b,0 0 0 38px #ffffff08}
+.welcome-banner>div:first-child{z-index:2;max-width:100%}
+.welcome-banner .eyebrow{display:inline-block;padding:6px 9px;border-radius:20px;background:#063f35d9;color:#ffcf56;font-size:9px}
+.welcome-banner h1{max-width:340px;margin:10px 0 8px;font-size:clamp(27px,7vw,35px);line-height:1.05;text-shadow:0 2px 10px #001d18}
+.welcome-banner p{max-width:320px;color:#fff4df;font-size:12px;font-weight:800;text-shadow:0 1px 5px #001d18}
+.welcome-stamp{display:none}
+.section-head{margin:19px 2px 10px}
+.section-head h2{font-size:18px;color:#173d31}
+.text-action{color:#c24c2b}
+.featured-card{border:2px solid #ddc9a7;border-radius:19px;background:#fff8e9;box-shadow:0 5px 0 #d8c6a7,0 10px 22px #46351b12}
+.featured-art{height:185px;background:#073f35}
+.featured-art img{object-position:center 32%;filter:saturate(1.15) contrast(1.06)}
+.featured-copy{padding:15px}
+.featured-copy h2,.library-story h2{font-size:21px;color:#123f33}
+.featured-meta{margin:12px 0;color:#6f654f}
+.btn{border-radius:12px;background:linear-gradient(180deg,#ff813e,#ee5528);box-shadow:0 3px 0 #b94420;font-size:14px}
+.btn.secondary{background:linear-gradient(180deg,#ffd75c,#f5b72d);color:#233b30;box-shadow:0 3px 0 #bd8c22}
+.profile-strip,.dashboard-card,.library-story{border:1.5px solid #ddc9a7;border-radius:17px;background:#fff8e9;box-shadow:0 4px 0 #e5d5b9}
+.page-intro{padding:23px 3px 12px}
+.page-intro h1{color:#103f34}
+.library-story img{height:205px}
+.bottom-nav{width:min(100%,460px);height:72px;background:#063f35;border-top:2px solid #d4a53e;box-shadow:0 -5px 18px #163d3026}
+.nav-item{color:#e7dfc9;font-size:10px}
+.nav-item span{font-size:23px}
+.nav-item.active{color:#ffca42}
+#game{padding:10px 13px 25px}
+.game-nav{margin:2px 0 12px}
+.game-nav .btn{padding:10px 13px}
+.storyhead{margin:10px 0 12px;padding:16px 17px;border:1px solid #b78c39;border-radius:17px;background:linear-gradient(135deg,#043d33,#0a6551);box-shadow:0 5px 0 #d6b36b}
+.storyhead h2{font-size:22px}
+.stage{min-height:300px;margin:14px 0 12px;border:3px solid #fff8e8;border-radius:19px;background:#c68a59;box-shadow:0 5px 0 #d8c5a5,0 10px 22px #2d271b18}
+.stage[data-scene="aunty"]{background:linear-gradient(145deg,#6b3b65,#bb7d99 58%,#f0c6a1)}
+.stage-glow{background:linear-gradient(180deg,#fff8e820,transparent 60%,#172a2420)}
+.scene-illustration{width:min(100%,390px);max-height:290px}
+.scene-illustration.hero-art{max-height:300px;height:300px;object-fit:cover;border:0;border-radius:0;box-shadow:none;object-position:center 30%}
+.stage-caption{margin:0 10px 9px;background:#fff1d8ed;color:#204638;font-size:9px}
+.story-panel{margin:12px 0;padding:16px;border:1.5px solid #dfceb1;border-radius:19px;background:#fff8ec;box-shadow:0 5px 0 #e3d2b5}
+.speaker-row{margin-bottom:12px;padding-bottom:11px}
+.scene{font-size:15px;line-height:1.62}
+.scene .spoken{border-left-color:#f36b36;background:#ffe2d4}
+.choices{gap:9px;margin-top:15px}
+.choice{padding:13px 14px;border:1.5px solid #d8c7aa;border-radius:13px;background:#fffaf0;color:#173f33;box-shadow:0 3px 0 #e6d6bb;font-size:13px}
+.choice:active{background:#ffedcf}
+.foot{color:#776b59}
+@media(min-width:600px){body{padding:20px 0}.wrap{min-height:calc(100vh - 40px);border-radius:25px}.bottom-nav{bottom:20px;border-radius:0 0 24px 24px}}
+@media(max-width:360px){.welcome-banner{min-height:300px}.stage{min-height:260px}.scene-illustration.hero-art{height:260px}}
+</style></head><body><main class="wrap">
 <header class="top"><div class="brand-lockup"><div class="brand-wordmark">KPALAVA<span>!</span></div><div class="brand-tagline">Na you choose am!</div></div><div class="wallet">🪙 <span id="coins">30</span> coins</div></header>
 <section id="home" class="app-page">
 <div class="welcome-banner"><div><div class="eyebrow">THE NIGERIAN INTERACTIVE COMEDY UNIVERSE</div><h1 id="welcomeTitle">Na you choose am!</h1><p>Stories · Characters · Choices · Consequences</p></div><div class="welcome-stamp">K!</div></div>
