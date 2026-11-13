@@ -185,12 +185,21 @@ body.home-active .exact-home{display:block}
 .component-story-card:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#160c18e8)}
 .component-story-card b{position:absolute;z-index:1;bottom:9px;left:3px;right:3px;font:900 11px/1.05 'Nunito Sans',sans-serif;text-align:center;text-shadow:0 2px 3px #000}
 @media(max-width:390px){.component-home{padding-left:11px!important;padding-right:11px!important}.home-brandline{height:92px}.home-brand-logo{height:82px}.component-feature{height:390px;margin-left:-11px;margin-right:-11px}.feature-label{bottom:182px}.component-continue>img{width:84px;flex-basis:84px;height:72px}.continue-details b{font-size:11px}.component-story-card b{font-size:9px}.component-section-heading h2{font-size:19px}}
+
+.home-brandline{gap:5px}
+.home-menu-button{flex:0 0 34px;border:0;background:transparent;color:white;font-size:25px;padding:3px}
+.home-brand-logo{flex:1;width:auto;min-width:0;max-width:245px;height:86px}
+.home-brand-actions{flex:0 0 auto;gap:5px}
+.home-wallet-button{display:flex;align-items:center;gap:3px;padding:6px 7px;border:1px solid #e0b832;border-radius:999px;background:#063e30;color:#fff;font-size:11px;white-space:nowrap}
+.home-wallet-button strong{font-size:12px}
+.home-wallet-button b{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#16a84b;color:#fff;font-size:15px}
+@media(max-width:390px){.home-brandline{gap:2px}.home-menu-button{flex-basis:29px;font-size:22px}.home-brand-logo{height:76px}.home-wallet-button{font-size:10px;padding:5px}.home-icon-button{width:34px;height:34px}}
 </style></head>
 <body class="home-active"><div id="app">
 <header class="topbar home-topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><img class="real-logo" src="assets/kpalava-logo-original.png" alt="KPALAVA! — Na you choose am!"></div><div class="top-actions"><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> <b>+</b></button><button class="bell-btn" aria-label="Notifications" data-screen="episodes">♟<i>1</i></button></div></header>
 <main>
 <section class="screen active home-screen component-home" id="home" aria-label="KPALAVA home">
-<div class="home-brandline"><div class="home-brand-logo"><img src="assets/kpalava-logo.webp" alt="KPALAVA! — Na you choose am!"></div><div class="home-brand-actions"><button class="home-icon-button" aria-label="Notifications" data-screen="episodes"><svg viewBox="0 0 32 32"><path d="M7 23h18l-2.2-3.1V13a6.8 6.8 0 0 0-13.6 0v6.9L7 23Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M13 26a3 3 0 0 0 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><i>1</i></button></div></div>
+<div class="home-brandline"><button class="home-menu-button" aria-label="Open stories" data-screen="stories">☰</button><div class="home-brand-logo"><img src="assets/kpalava-logo.webp" alt="KPALAVA! — Na you choose am!"></div><div class="home-brand-actions"><button class="home-wallet-button" data-screen="wallet" aria-label="Open coin wallet">🪙 <strong id="homeCoinBalance">30</strong><b>+</b></button><button class="home-icon-button" aria-label="Notifications" data-screen="episodes"><svg viewBox="0 0 32 32"><path d="M7 23h18l-2.2-3.1V13a6.8 6.8 0 0 0-13.6 0v6.9L7 23Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M13 26a3 3 0 0 0 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><i>1</i></button></div></div>
 <div class="component-feature">
 <img class="feature-art" src="assets/wedding-feature.webp" alt="Adaeze, Chinedu and Aunty Ngozi at the wedding">
 <div class="feature-overlay"></div>
