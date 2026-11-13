@@ -111,22 +111,50 @@ url('assets/ch1-opening.webp') center 28%/cover no-repeat}
 .reference-nav button.active{background:linear-gradient(#ffe94a,#ffb900);color:#4a1230;border-radius:999px;max-width:116px;box-shadow:0 2px 0 #7a3a0a}
 .reference-nav button.active svg{color:#a60050}
 @media(max-width:390px){.home-topbar .brand-word{font-size:26px}.logo-plaque{padding:5px 8px}.reference-nav button{font-size:9px}.reference-nav button svg{width:28px;height:28px}}
+
+/* Use the exact approved generated home-screen artwork as the home screen itself */
+.exact-home{padding:0!important;background:#fff2df!important}
+.reference-stage{position:relative;width:100%;line-height:0}
+.reference-art{display:block;width:100%;height:auto}
+.reference-hotspot{position:absolute;display:block;border:0;border-radius:12px;background:transparent;padding:0;cursor:pointer;z-index:2}
+.reference-hotspot:focus-visible{outline:3px solid #00d9ff;outline-offset:2px;background:#00d9ff22}
+.hs-menu{left:4%;top:4%;width:10%;height:5%}
+.hs-wallet{left:67%;top:3.8%;width:21%;height:6%}
+.hs-bell{left:89%;top:3.5%;width:8%;height:6%}
+.hs-play{left:25%;top:46%;width:50%;height:7%}
+.hs-continue{left:4%;top:58%;width:92%;height:12%}
+.hs-seeall{left:80%;top:72.8%;width:17%;height:5%}
+.hs-story{top:77.5%;height:12%;width:23%}
+.hs-story1{left:3%}.hs-story2{left:27.5%}.hs-story3{left:51.7%}.hs-story4{left:75.7%}
+.hs-nav{top:91%;height:8.5%;width:19%}
+.hs-home{left:3%}.hs-stories{left:22%}.hs-episodes{left:42%}.hs-shop{left:62%}.hs-profile{left:81%}
+.real-logo{display:block;width:170px;max-width:100%;height:75px;object-fit:contain;object-position:center}
+.home-topbar .brand-mark{transform:none;margin-top:0}
+body.home-active #app{padding-bottom:0}
+body.home-active .topbar,body.home-active .nav{display:none}
+@media(min-width:700px){body.home-active{padding:20px 0}body.home-active #app{min-height:0}}
 </style></head>
 <body><div id="app">
-<header class="topbar home-topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><div class="logo-plaque"><span class="logo-burst">✦</span><div class="brand-word">KPALAVA<span>!</span></div><div class="brand-tagline">Na you choose am!</div></div></div><div class="top-actions"><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> <b>+</b></button><button class="bell-btn" aria-label="Notifications" data-screen="episodes">♟<i>1</i></button></div></header>
+<header class="topbar home-topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><img class="real-logo" src="assets/kpalava-logo-original.png" alt="KPALAVA! — Na you choose am!"></div><div class="top-actions"><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> <b>+</b></button><button class="bell-btn" aria-label="Notifications" data-screen="episodes">♟<i>1</i></button></div></header>
 <main>
-<section class="screen active home-screen" id="home">
-<div class="home-feature">
-  <div class="feature-copy"><span class="feature-kicker">FEATURED STORY</span><h1>The Wedding That<br>Almost Didn't Happen</h1><p>A missing cake, a furious aunt, and 1000 problems...</p><button class="feature-play" data-action="play"><span>▶</span> Play Now</button><div class="feature-dots"><i class="active"></i><i></i><i></i><i></i></div></div>
-</div>
-<div class="section-title home-section-title"><h2>Continue Playing</h2></div>
-<button class="continue-card" data-action="play"><span class="continue-thumb"></span><span class="continue-copy"><b>The Wedding That<br>Almost Didn't Happen</b><small>Chapter 1 of 5</small><span class="continue-progress"><i></i></span></span><strong class="continue-percent">25%</strong><span class="continue-arrow">▶</span></button>
-<div class="section-title home-section-title"><h2>More Stories</h2><button class="link" data-screen="stories">See All</button></div>
-<div class="home-stories">
-  <button class="home-story" data-screen="stories"><span class="home-story-art art-tenant"></span><b>The Tenant<br>from Hell</b></button>
-  <button class="home-story" data-screen="stories"><span class="home-story-art art-landlord"></span><b>The Landlord's<br>Daughter</b></button>
-  <button class="home-story" data-screen="stories"><span class="home-story-art art-office"></span><b>Office<br>Wahala</b></button>
-  <button class="home-story" data-screen="stories"><span class="home-story-art art-campus"></span><b>Campus<br>Palava</b></button>
+<section class="screen active home-screen exact-home" id="home" aria-label="KPALAVA illustrated home screen">
+<div class="reference-stage">
+<img class="reference-art" src="assets/kpalava-home-reference.webp" alt="KPALAVA home screen: featured wedding story, Play Now, Continue Playing, More Stories and the original navigation icons">
+<button class="reference-hotspot hs-menu" aria-label="Menu" data-screen="stories"></button>
+<button class="reference-hotspot hs-wallet" aria-label="Coin wallet" data-screen="wallet"></button>
+<button class="reference-hotspot hs-bell" aria-label="Notifications" data-screen="episodes"></button>
+<button class="reference-hotspot hs-play" aria-label="Play the featured story" data-action="play"></button>
+<button class="reference-hotspot hs-continue" aria-label="Continue playing" data-action="play"></button>
+<button class="reference-hotspot hs-seeall" aria-label="See all stories" data-screen="stories"></button>
+<button class="reference-hotspot hs-story hs-story1" aria-label="The Tenant from Hell" data-screen="stories"></button>
+<button class="reference-hotspot hs-story hs-story2" aria-label="The Landlord's Daughter" data-screen="stories"></button>
+<button class="reference-hotspot hs-story hs-story3" aria-label="Office Wahala" data-screen="stories"></button>
+<button class="reference-hotspot hs-story hs-story4" aria-label="Campus Palava" data-screen="stories"></button>
+<button class="reference-hotspot hs-nav hs-home" aria-label="Home" data-screen="home"></button>
+<button class="reference-hotspot hs-nav hs-stories" aria-label="Stories" data-screen="stories"></button>
+<button class="reference-hotspot hs-nav hs-episodes" aria-label="My Episodes" data-screen="episodes"></button>
+<button class="reference-hotspot hs-nav hs-shop" aria-label="Shop" data-screen="wallet"></button>
+<button class="reference-hotspot hs-nav hs-profile" aria-label="Profile" data-screen="profile"></button>
 </div>
 </section>
 <section class="screen" id="stories"><div class="page-head"><h1>Stories</h1></div><p class="muted">Welcome to the KPALAVA! universe. Every story has its own cast, chaos and consequences.</p><div class="story-card"><div class="story-thumb"></div><div class="story-info"><span class="pill">2 CHAPTERS FREE</span><h3>The Wedding That Almost Didn't Happen</h3><p>Family · Comedy · Wedding</p><button class="btn primary" data-screen="episodes">Explore story</button></div></div></section>
@@ -154,7 +182,7 @@ aunty:{speaker:'You',text:'You open Aunty Ngozi’s chat. Three voice notes are 
 search:{speaker:'You',text:'You search for emergency cake vendors. One number looks promising. Another has a profile picture of a very suspicious-looking sponge cake.',thought:'At this point, even bread with icing is a serious option.',feedback:'You chose action. Whether it is the correct action remains to be seen.'}
 };
 function updateCoins(){['coinCount','walletBalance'].forEach(id=>{if($(id))$(id).textContent=coins});localStorage.setItem('kp_coins_v1',String(coins))}
-function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));window.scrollTo({top:0,behavior:'smooth'})}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));document.body.classList.toggle('home-active',id==='home');window.scrollTo({top:0,behavior:'smooth'})}
 function startGame(){selected='';$('continueGame').disabled=true;$('continueGame').textContent='Continue →';$('chapterLabel').textContent='CHAPTER 1: THE CAKE HAS DISAPPEARED';$('speakerName').textContent='You';$('storyBeat').textContent='You wake up at 7:12 AM to the sound of your phone vibrating nonstop. Seventeen missed calls. Forty-three WhatsApp messages. The wedding is in six hours, and the cake has mysteriously disappeared!';$('innerThought').textContent='I haven\'t even brushed my teeth, and my family is already declaring a state of emergency. What exactly did I do to deserve this?';$('choicePrompt').textContent='What do you do?';$('choiceFeedback').textContent='Choose carefully. Or don\'t. We enjoy drama here.';document.querySelectorAll('.choice').forEach(b=>b.classList.remove('selected'));show('game')}
 function openPremium(){ $('premiumModal').classList.add('show') }function closePremium(){ $('premiumModal').classList.remove('show') }
 document.addEventListener('click',e=>{const nav=e.target.closest('[data-screen]');if(nav){show(nav.dataset.screen);return}const action=e.target.closest('[data-action]');if(action){if(action.dataset.action==='play'){startGame()}else if(action.dataset.action==='chapter2'){startGame();$('chapterLabel').textContent='CHAPTER 2: FAMILY EMERGENCY';$('storyBeat').textContent='Chapter 2 is ready to continue. Your decisions from the first chapter will carry forward.';$('innerThought').textContent='One thing is certain: this family will not let anybody enjoy peace.';$('choicePrompt').textContent='Continue the story';document.querySelectorAll('.choice').forEach(b=>b.hidden=true)}else openPremium();return}const choice=e.target.closest('[data-choice]');if(choice){selected=choice.dataset.choice;document.querySelectorAll('.choice').forEach(b=>b.classList.toggle('selected',b===choice));const beat=beats[selected];$('speakerName').textContent=beat.speaker;$('storyBeat').textContent=beat.text;$('innerThought').textContent=beat.thought;$('choiceFeedback').textContent=beat.feedback;$('continueGame').disabled=false}});
