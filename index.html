@@ -28,13 +28,60 @@ button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,inpu
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:17px;margin:12px 0;box-shadow:var(--shadow)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{text-align:center;background:#fff1d8;border:1px solid var(--line);border-radius:13px;padding:11px 4px}.stat strong{display:block;font:700 21px Comfortaa;color:var(--green)}.stat small{font-size:10px;font-weight:800}.field{display:block;font-size:11px;font-weight:900;margin:13px 0 5px}.input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:white}.look-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.look{border:1px solid var(--line);background:white;border-radius:12px;padding:10px;font-size:11px;font-weight:800}.look.selected{border:2px solid var(--magenta);background:#fff2f8}
 .modal-wrap{display:none;position:fixed;inset:0;background:#001e18bd;z-index:50;align-items:center;justify-content:center;padding:20px}.modal-wrap.show{display:flex}.modal{width:min(360px,100%);background:var(--paper);border:2px solid var(--gold);border-radius:22px;padding:22px;text-align:center}.modal h2{font:700 22px Comfortaa}.modal .price{font:700 28px Comfortaa;color:#986600;margin:14px}.modal button{width:100%;margin-top:9px}.notice{background:#e8f2e1;border-radius:12px;padding:10px;color:#28603b;font-size:11px}
 @media(min-width:700px){body{padding:20px 0}#app{min-height:850px;border-radius:25px}.topbar{border-radius:25px 25px 0 0}.nav{bottom:20px;border-radius:0 0 25px 25px}}
+
+/* Home screen: match the approved illustrated KPALAVA! reference */
+.home-screen{padding:0 14px 22px;background:linear-gradient(#07513f 0 16%,var(--cream) 16%)}
+.home-screen .home-feature{height:430px;margin:0 -14px 0;position:relative;overflow:hidden;background:
+linear-gradient(0deg,#fff2df 0%,#fff2df 9%,#fff2df00 34%),
+linear-gradient(180deg,#06463800 35%,#06463818 54%,#fff2df 100%),
+url('assets/ch1-opening.webp') center 28%/cover no-repeat}
+.home-feature:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06463855,transparent 44%);pointer-events:none}
+.feature-copy{position:absolute;z-index:1;left:17px;right:17px;bottom:8px;text-align:center;color:#171217}
+.feature-kicker{display:inline-block;background:var(--gold);color:#16130d;border-radius:5px;padding:6px 12px;font-size:11px;font-weight:1000;letter-spacing:.4px;box-shadow:0 2px 0 #9a6313}
+.feature-copy h1{font:900 clamp(24px,7vw,33px)/1.03 'Nunito Sans',sans-serif;letter-spacing:-1px;color:#fff;text-shadow:2px 3px 0 #681039,-2px -2px 0 #681039,2px -2px 0 #681039,-2px 2px 0 #681039,0 5px 10px #28121d;margin:10px 0 7px}
+.feature-copy p{font-size:13px;font-weight:800;margin:0 auto 11px;color:#241a1b}
+.feature-play{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto;background:linear-gradient(110deg,#c00b61,#9a0751);color:white;border:2px solid white;border-radius:999px;padding:11px 29px;min-width:220px;font-weight:900;font-size:17px;box-shadow:0 4px 0 #6e073d}
+.feature-play span{font-size:18px}
+.feature-dots{display:flex;justify-content:center;gap:7px;margin:12px 0 0}
+.feature-dots i{width:11px;height:11px;border-radius:50%;background:#d9bca8;border:1px solid #fff}
+.feature-dots i.active{background:var(--magenta)}
+.home-section-title{margin:10px 2px 8px}
+.home-section-title h2{font:900 21px 'Nunito Sans',sans-serif;letter-spacing:-.5px;color:#151515}
+.continue-card{width:100%;display:flex;align-items:center;gap:10px;text-align:left;padding:8px;background:#fff;border:1.5px solid #d9c8b8;border-radius:19px;box-shadow:0 3px 8px #28170e13;position:relative;color:#111;min-height:104px}
+.continue-thumb{width:104px;height:82px;flex:0 0 104px;border-radius:12px;background:url('assets/ch1-opening.webp') center/cover}
+.continue-copy{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1;padding-right:31px}
+.continue-copy b{font:900 14px/1.12 'Nunito Sans',sans-serif}
+.continue-copy small{font-size:11px;color:#3e3a37}
+.continue-progress{height:7px;background:#d9d0c8;border-radius:9px;overflow:hidden;width:100%;margin-top:3px}
+.continue-progress i{display:block;width:25%;height:100%;background:var(--magenta);border-radius:9px}
+.continue-percent{font-size:12px;position:absolute;right:44px;bottom:11px}
+.continue-arrow{position:absolute;right:10px;top:17px;width:43px;height:43px;border-radius:50%;background:var(--magenta);color:white;display:grid;place-items:center;font-size:17px}
+.home-stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.home-story{border:0;padding:0;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 2px 7px #25180f18;text-align:center;color:white;position:relative;min-height:125px}
+.home-story-art{display:block;position:absolute;inset:0;background-image:url('assets/ch1-opening.webp');background-size:cover;background-position:center}
+.art-tenant{filter:hue-rotate(320deg) saturate(.8);background-position:15% center}
+.art-office{filter:hue-rotate(25deg) saturate(.9);background-position:65% center}
+.art-campus{filter:hue-rotate(285deg) saturate(1.1);background-position:85% center}
+.home-story:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#190d18e8)}
+.home-story b{position:absolute;z-index:1;bottom:10px;left:4px;right:4px;font-size:12px;line-height:1.12;text-shadow:0 2px 3px #000}
+@media(max-width:380px){.home-screen .home-feature{height:395px}.continue-thumb{width:85px;flex-basis:85px}.continue-copy b{font-size:12px}.home-story{min-height:112px}}
 </style></head>
 <body><div id="app">
 <header class="topbar"><button class="icon-btn" id="menuBtn" aria-label="Open stories">☰</button><div class="brand-mark"><div class="brand-word">KPALAVA<span>!</span></div><div class="brand-tagline">Na you choose am!</div></div><button class="coin-pill" data-screen="wallet">🪙 <span id="coinCount">30</span> +</button></header>
 <main>
-<section class="screen active" id="home"><div class="hero"><span class="eyebrow">THE NIGERIAN INTERACTIVE COMEDY UNIVERSE</span><h1>Stories. Choices. Consequences.</h1><p>Every decision has a consequence. Sometimes, even minding your business causes palava.</p><button class="btn primary" data-action="play">▶ Continue the palava</button></div>
-<div class="section-title"><h2>Continue Playing</h2><button class="link" data-screen="episodes">View chapters</button></div><div class="story-card"><div class="story-thumb"></div><div class="story-info"><span class="pill">CHAPTER 1 · FREE</span><h3>The Wedding That Almost Didn't Happen</h3><p>The cake is missing. The family is in panic mode.</p><div class="progress-track"><span id="progressFill"></span></div><button class="link" data-action="play">Pick up where you left off →</button></div></div>
-<div class="section-title"><h2>More Stories</h2><button class="link" data-screen="stories">See all</button></div><div class="mini-row"><div class="mini-card"><div class="mini-art"></div><b>New stories coming soon</b></div><div class="mini-card"><div class="mini-art"></div><b>More palava loading...</b></div></div></section>
+<section class="screen active home-screen" id="home">
+<div class="home-feature">
+  <div class="feature-copy"><span class="feature-kicker">FEATURED STORY</span><h1>The Wedding That<br>Almost Didn't Happen</h1><p>A missing cake, a furious aunt, and 1000 problems...</p><button class="feature-play" data-action="play"><span>▶</span> Play Now</button><div class="feature-dots"><i class="active"></i><i></i><i></i><i></i></div></div>
+</div>
+<div class="section-title home-section-title"><h2>Continue Playing</h2></div>
+<button class="continue-card" data-action="play"><span class="continue-thumb"></span><span class="continue-copy"><b>The Wedding That<br>Almost Didn't Happen</b><small>Chapter 1 of 5</small><span class="continue-progress"><i></i></span></span><strong class="continue-percent">25%</strong><span class="continue-arrow">▶</span></button>
+<div class="section-title home-section-title"><h2>More Stories</h2><button class="link" data-screen="stories">See All</button></div>
+<div class="home-stories">
+  <button class="home-story" data-screen="stories"><span class="home-story-art art-tenant"></span><b>More stories<br>coming soon</b></button>
+  <button class="home-story" data-screen="stories"><span class="home-story-art art-office"></span><b>New palava<br>loading...</b></button>
+  <button class="home-story" data-screen="stories"><span class="home-story-art art-campus"></span><b>Stay tuned<br>for more</b></button>
+</div>
+</section>
 <section class="screen" id="stories"><div class="page-head"><h1>Stories</h1></div><p class="muted">Welcome to the KPALAVA! universe. Every story has its own cast, chaos and consequences.</p><div class="story-card"><div class="story-thumb"></div><div class="story-info"><span class="pill">2 CHAPTERS FREE</span><h3>The Wedding That Almost Didn't Happen</h3><p>Family · Comedy · Wedding</p><button class="btn primary" data-screen="episodes">Explore story</button></div></div></section>
 <section class="screen" id="episodes"><div class="page-head"><button class="back" data-screen="stories">‹</button><h1>Story chapters</h1></div><div class="hero" style="min-height:155px"><span class="eyebrow">THE WEDDING THAT ALMOST DIDN'T HAPPEN</span><h1>One wedding. Plenty palava.</h1><p>Chapters 1 and 2 are free. Selected premium choices begin from Chapter 3.</p></div><div class="chapter-list"><button class="chapter" data-action="play"><span class="num">1</span><span><b>Chapter 1: The Cake Has Disappeared</b><small>Start the wedding morning</small></span><span class="cost">FREE</span></button><button class="chapter" data-action="chapter2"><span class="num">2</span><span><b>Chapter 2: Family Emergency</b><small>Free to play</small></span><span class="cost">FREE</span></button><button class="chapter locked" data-action="premium"><span class="num">3</span><span><b>Chapter 3: Aunty Ngozi Takes Charge</b><small>Selected premium choices</small></span><span class="cost">🪙</span></button><button class="chapter locked" data-action="premium"><span class="num">4</span><span><b>Chapter 4: The Uninvited Guest</b><small>Selected premium choices</small></span><span class="cost">🪙</span></button><button class="chapter locked" data-action="premium"><span class="num">5</span><span><b>Chapter 5: The Wedding Reception</b><small>Selected premium choices</small></span><span class="cost">🪙</span></button></div></section>
 <section class="screen" id="game"><div class="game-head">THE WEDDING THAT ALMOST DIDN'T HAPPEN · <span id="chapterLabel">CHAPTER 1: THE CAKE HAS DISAPPEARED</span></div><div class="game-art"><span class="scene-tag">Wedding morning · 7:12 AM</span></div><article class="dialogue"><span class="speaker" id="speakerName">You</span><div id="storyBeat">You wake up at 7:12 AM to the sound of your phone vibrating nonstop. Seventeen missed calls. Forty-three WhatsApp messages. The wedding is in six hours, and the cake has mysteriously disappeared!</div><div class="inner-thought" id="innerThought">I haven't even brushed my teeth, and my family is already declaring a state of emergency. What exactly did I do to deserve this?</div><h3 id="choicePrompt">What do you do?</h3><div class="choices" id="choices"><button class="choice" data-choice="vendor">☎ Call the cake vendor immediately.</button><button class="choice" data-choice="groom">📞 Call the groom. Something is not adding up.</button><button class="choice" data-choice="aunty">🙆 Tell Aunty Ngozi. She deserves to know.</button><button class="choice" data-choice="search">🔎 Find another cake vendor. Right now.</button></div><p class="muted" id="choiceFeedback" aria-live="polite">Choose carefully. Or don't. We enjoy drama here.</p><div class="game-actions"><button class="btn light-btn" data-screen="episodes">Exit story</button><button class="btn green-btn" id="continueGame" disabled>Continue →</button></div></article></section>
